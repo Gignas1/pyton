@@ -183,3 +183,21 @@
 #else:
     #print("nekarsta diena!")
 
+import random
+
+print("Welcome to the Guess the number game!")
+
+randnum = random.randint(1,30)
+
+while True:
+    try:
+        randnum_guess = int(input("Guess a number between 1 and 30: "))
+        if randnum_guess < 1 or randnum_guess > 30:
+            print("Please enter a number between 1 and 30.")
+        elif randnum == randnum_guess:
+            print("Hooray! You guessed it.")
+            break
+        else:
+            print("Try again")
+    except ValueError:
+        print("Invalid input. Please enter a number.")
